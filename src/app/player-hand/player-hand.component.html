@@ -1,0 +1,33 @@
+<div>
+  <h2>The player hand</h2>
+
+  <div>
+    <button (click)="distributes()">
+      Distributes cards
+    </button>
+    <button (click)="clearHand()">
+      Clear hand
+    </button>
+  </div>
+
+  <div *ngIf="!(cards.length == 0)">
+    <h3>Number of cards distributed : {{cards.length}}</h3>
+    <div *ngFor="let card of cards">
+      <ul>
+        <li>
+          <h4> <!-- replace this string by cards pictures -->
+            Color : {{card.color.cardColor}} Value : {{card.value.cardValue}}
+          </h4>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <button (click)="orderByValue()">
+        Order by value
+      </button>
+      <button (click)="orderByColor()">
+        Order by color
+      </button>
+    </div>
+  </div>
+</div>
